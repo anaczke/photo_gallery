@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(to right, pink, blue);
+}
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-auto-rows: 100px;
+    grid-auto-flow: dense;
+}
+h1{
+    text-align: center;
+    font-size: 48px;
+    color: antiquewhite;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.v1{
+    grid-row: span 1;
+}
+.h1{
+    grid-column: span 1;
+}
+.v2{
+    grid-row: span 2;
+}
+.h2{
+    grid-column: span 2;
+}
+.v3{
+    grid-row: span 3;
+}
+.h3{
+    grid-column: span 3;
+}
+.v4{
+    grid-row: span 4;
+}
+.h4{
+    grid-column: span 4;
+}
+.close{
+    background: none;
+    color: blue;
+    border: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+ }
+.overlay{
+    position: fixed;
+    background-color: rgba(0,0,0,0.7);
+    top:0;
+    right: 0;
+    left:0;
+    display: none;
+    z-index: 2;
+}
+.overlay.open{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.overlay-inner{
+    background-color: aliceblue;
+    width: 700px;
+    padding: 10px;
+    display: grid;
+    justify-items: right;
+}
+.overlay-inner>img{
+    width: 100%;
+}
+.item{
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+}
+.item img{
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.item__overlay{
+    background-color: #ffc60032;
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    transform:translateY(100%);
+    transition: 0.2s;
+}
+
+.item:hover .item__overlay {
+    transform:translateY(0);
+}
+.item__overlay > button{
+    justify-self: center;
+background: none;
+border: 2px solid white;
+color: white;
+text-transform: uppercase;
+padding:5px;
+cursor: pointer;
+}
+body > section > div > div > p{
+margin-top: 20px;
+font-size: 0.8em;
+}
+
+footer>p{
+    display: flex;
+    justify-content: right;
+    color: white;
+    cursor: pointer;
+}
+footer>p>a{
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+}
